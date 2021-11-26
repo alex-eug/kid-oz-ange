@@ -58,7 +58,11 @@ export default function DetailActivity() {
     }, 2000)
   }
 
-
+  const notConnectRateNotPossible = (notConnectAfter) => {
+    document.querySelector(".pvide").textContent = 'veuillez vous connecter pour commenter'
+    setPosinset("")
+   
+  }
 
 
   //handle to submit rate and comment
@@ -79,8 +83,12 @@ export default function DetailActivity() {
       console.log("post", response.data.erreur)
     getData()
     setComment('')
-
+    
+    const notConnectRate = response.data.error
+    notConnectRate ? notConnectRateNotPossible() :
+      console.log("post", response.data.error)
   }
+    
 
   const getData = () => {
     axios.get(`https://kidozanges.herokuapp.com/api/activity/${id}`)
