@@ -6,11 +6,20 @@ a{
     cursor: pointer;
 }
 
-.form-field{
+#login  .form-field{
     width: 55% !important;
 }
 
-form{
+
+#login #modal--content{
+    padding: 6rem !important;
+}
+
+.a-connexion{
+    font-size: 1rem;
+}
+
+#login  form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,8 +28,7 @@ form{
 
 }
 
-
-#form-field > input:focus{
+#login  #form-field  input:focus{
     border-color: var(--green-color);
 }
 
